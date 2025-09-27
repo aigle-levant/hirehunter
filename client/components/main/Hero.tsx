@@ -45,7 +45,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-gradient-to-br from-[#155dfc]/10 via-[#1c398e]/20 to-[#155dfc]/10"
+      className="relative w-full min-h-screen bg-gradient-to-br from-[#155dfc]/10 via-[#1c398e]/20 to-[#155dfc]/10 flex flex-col items-center justify-center overflow-hidden px-6 text-white dark:text-black"
     >
       <motion.div
         animate={{ x: [0, 120, 0], y: [0, -80, 0], scale: [1, 1.2, 1] }}
@@ -64,15 +64,15 @@ export default function Hero() {
         transition={{ duration: 1 }}
         className="text-center z-10 space-y-4 mt-10"
       >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-basierCircle font-bold leading-tight text-black dark:text-white">
+        <h1 className="text-[4rem] font-basierCircle font-bold leading-tight text-white dark:text-black">
           Your perfect hire just got
           <br />
-          <span className="italic font-semibold font-dmSerif">
+          <span className="italic font-black font-dmSerif">
             auto-rejected
           </span>{" "}
           by a broken filter.
         </h1>
-        <p className="text-sm sm:text-lg md:text-2xl text-[#0a0a0a]/90 dark:text-gray-300 max-w-2xl mx-auto font-inter">
+        <p className="text-lg lg:text-2xl font-body dark:text-[#0a0a0a]/90 text-gray-300 max-w-2xl mx-auto">
           Your AI sidekick spots talent patterns humans miss.
         </p>
       </motion.div>

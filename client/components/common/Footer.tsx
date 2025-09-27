@@ -11,7 +11,7 @@ import { faShieldDog } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-blue-950 text-gray-300 px-6 sm:px-12 py-12 border-t border-white/10">
+    <footer className="w-full bg-blue-950 text-white dark:text-black px-6 sm:px-12 py-12 border-t border-white/10">
       {/* Top CTA Row */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
         <p className="text-lg font-light max-w-lg">

@@ -33,7 +33,7 @@ export default function Navbar() {
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/70 backdrop-blur-md shadow-md dark:bg-gray-900/70"
-          : "bg-white dark:bg-gray-900"
+          : "bg-white text-black"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,9 +42,7 @@ export default function Navbar() {
           <Link
             href="/"
             className={`font-bold font-sans text-2xl tracking-tight ${
-              scrolled
-                ? "text-gray-900 dark:text-white"
-                : "text-gray-900 dark:text-gray-200"
+              scrolled ? "text-black/50" : "text-black"
             }`}
           >
             Hirehunter
