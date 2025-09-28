@@ -6,3 +6,8 @@ nltk
 requests
 spacy
 python-dotenv
+transformers
+sentence-transformers
+pdfplumber
+python-multipart
+torch

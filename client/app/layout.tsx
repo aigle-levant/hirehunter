@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, DM_Serif_Display } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -12,6 +13,24 @@ export const metadata: Metadata = {
   title: "Next.js and Supabase Starter Kit",
   description: "The fastest way to build apps with Next.js and Supabase",
 };
+
+const basierCircle = localFont({
+  src: [
+    {
+      path: "../public/font/BasierCircle-Regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  variable: "--font-basierCircle",
+});
+
+const dmSerif = DM_Serif_Display({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-dmserif",
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,7 +45,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body
+        className={`${inter.variable} ${dmSerif.variable} ${basierCircle.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
