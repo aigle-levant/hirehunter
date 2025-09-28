@@ -47,7 +47,7 @@ export default function Solutions() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-gradient-to-br from-[#155dfc]/10 via-[#1c398e]/20 to-[#155dfc]/10 py-20 px-6 overflow-hidden"
+      className="relative w-full overflow-hidden bg-gradient-to-br from-[#155dfc]/5 via-[#1c398e]/10 to-[#155dfc]/5 dark:from-[#1c1c2c]/5 dark:via-[#2c2c3a]/10 dark:to-[#1c1c2c]/5 py-20 px-6 text-white dark:text-black"
     >
       {/* Section Title */}
       <motion.div
@@ -56,16 +56,16 @@ export default function Solutions() {
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6"
       >
-        <div className="inline-flex px-5 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-600 font-semibold backdrop-blur-lg">
-          Our Solution
+        <div className="inline-flex px-5 py-2 rounded-full border  font-semibold backdrop-blur-lg">
+          Meet Hirehunter
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-basierCircle leading-tight text-black dark:text-white">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-basierCircle leading-tight ">
           Transform hiring from a{" "}
-          <span className="italic font-black font-dmSerif">painful</span>{" "}
-          process into an effortless AI-powered workflow
+          <span className="italic font-bold font-dmSerif">painful</span> process
+          into an effortless AI-powered workflow, powered by LangChain.
         </h2>
-        <p className="text-base sm:text-lg lg:text-xl text-black/70 dark:text-gray-400 max-w-2xl mx-auto">
-          Streamline candidate screening, JD parsing, and interview scheduling —
+        <p className="text-base sm:text-lg lg:text-xl dark:text-black/70 text-gray-300  max-w-3xl mx-auto">
+          Streamline candidate screening, JD parsing, and interview scheduling,
           all in one place.
         </p>
       </motion.div>
@@ -73,7 +73,8 @@ export default function Solutions() {
       {/* Solution Cards */}
       <motion.div
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
         variants={{
           hidden: {},
           visible: { transition: { staggerChildren: 0.2 } },
@@ -92,19 +93,27 @@ export default function Solutions() {
               rotateX: mouse.y,
               rotateY: mouse.x,
             }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="relative p-6 sm:p-8 bg-white/10 dark:bg-gray-800/20 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg cursor-pointer flex flex-col justify-between"
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            // Swap light <-> dark mode
+            className="relative p-6 sm:p-8 
+                 bg-gray-900/80 text-white 
+                 dark:bg-white/80 dark:text-black
+                 backdrop-blur-xl border border-black/10 dark:border-gray-200
+                 rounded-2xl shadow-lg cursor-pointer flex flex-col justify-between"
           >
             <div className="space-y-4">
               {s.icon}
-              <h3 className="text-xl font-semibold text-black dark:text-white">
-                {s.title}
-              </h3>
-              <p className="text-sm sm:text-base text-black/70 dark:text-gray-300 leading-relaxed">
+              <h3 className="text-xl font-semibold">{s.title}</h3>
+              <p className="text-sm sm:text-base text-gray-300 dark:text-gray-700 leading-relaxed">
                 {s.description}
               </p>
             </div>
-            <button className="mt-4 self-start px-4 py-2 rounded-full bg-blue-500/20 text-blue-600 hover:bg-blue-500/30 hover:text-white transition-all duration-200 text-sm font-medium">
+            <button
+              className="mt-4 self-start px-4 py-2 rounded-full 
+                   bg-blue-600/30 text-white hover:bg-blue-600/50 
+                   dark:bg-blue-500/20 dark:text-blue-600 dark:hover:bg-blue-500/30 dark:hover:text-white 
+                   transition-all duration-200 text-sm font-medium"
+            >
               {s.button}
             </button>
           </motion.div>

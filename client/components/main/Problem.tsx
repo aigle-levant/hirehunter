@@ -53,13 +53,13 @@ export default function ProblemStatement() {
         transition={{ duration: 0.8 }}
         className="relative z-10 max-w-4xl mx-auto text-center space-y-4 sm:space-y-6"
       >
-        <div className="inline-flex px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-400 text-sm sm:text-base font-semibold backdrop-blur-lg">
+        <div className="inline-flex px-4 py-2 rounded-full border border-blue-900  text-sm sm:text-base font-semibold backdrop-blur-lg">
           System Failure
         </div>
 
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-basierCircle leading-snug sm:leading-tight text-white dark:text-black">
           Hiring in 2025 is{" "}
-          <span className="italic font-light font-dmSerif">
+          <span className="italic font-bold font-dmSerif">
             catastrophically
           </span>{" "}
           broken
@@ -71,10 +71,10 @@ export default function ProblemStatement() {
         </p>
       </motion.div>
 
-      {/* Problem Cards */}
       <motion.div
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }} // animate only once on entering view
         variants={{
           hidden: {},
           visible: { transition: { staggerChildren: 0.2 } },
@@ -88,24 +88,21 @@ export default function ProblemStatement() {
               hidden: { opacity: 0, y: 40 },
               visible: { opacity: 1, y: 0 },
             }}
-            whileHover={{ scale: 1.05, y: -5 }}
-            animate={{
-              rotateX: mouse.y,
-              rotateY: mouse.x,
-              y: [0, -2, 0],
-            }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="relative p-6 sm:p-8 bg-white/10 dark:bg-gray-800/20 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg cursor-pointer"
+            whileHover={{ scale: 1.05, y: -5, rotateX: 2, rotateY: -2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative p-6 sm:p-8
+                 bg-white/80 text-black
+                 dark:bg-gray-900/80 dark:text-white
+                 backdrop-blur-xl border border-gray-200 dark:border-black/20
+                 rounded-2xl shadow-lg cursor-pointer"
           >
             <div className="space-y-4">
               {p.icon}
-              <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white">
-                {p.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-black/60 dark:text-gray-400">
+              <h3 className="text-lg sm:text-xl font-semibold">{p.title}</h3>
+              <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-400">
                 {p.desc}
               </p>
-              <p className="text-sm sm:text-base text-black/80 dark:text-gray-200 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-900 dark:text-gray-200 leading-relaxed">
                 “{p.text}”
               </p>
             </div>
@@ -129,7 +126,7 @@ export default function ProblemStatement() {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="inline-flex items-center px-4 sm:px-6 py-3 sm:py-4 backdrop-blur-lg rounded-2xl cursor-pointer"
         >
-          <span className="text-2xl sm:text-4xl lg:text-5xl font-basierCircle font-bold bg-blue-900 bg-clip-text text-transparent">
+          <span className="text-2xl sm:text-4xl lg:text-5xl font-basierCircle font-bold bg-blue-400 dark:bg-blue-900 bg-clip-text text-transparent">
             But we have the antidote
           </span>
         </motion.div>

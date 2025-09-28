@@ -7,17 +7,22 @@ import {
   faLinkedin,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faShieldDog } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
     <footer className="w-full bg-blue-950 text-white dark:text-black px-6 sm:px-12 py-12 border-t border-white/10">
       {/* Top CTA Row */}
+      <div>
+        <p className="text-5xl text-center font-basierCircle font-bold text-white">
+          Your AI Wingman for Hiring
+        </p>
+        <hr className="bg-white h-1 my-7" />
+      </div>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
         <p className="text-lg font-light max-w-lg">
           Your AI Wingman for Hiring
         </p>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 md:ml-auto">
           <Link
             href="/jd"
             className="px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-all"
@@ -38,7 +43,6 @@ export default function Footer() {
         {/* Branding & Socials */}
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faShieldDog} size="2xl" />
             <h2 className="text-2xl font-semibold text-white">Hirehunter</h2>
           </div>
           <p className="text-sm text-gray-400 mt-2">
@@ -52,7 +56,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-white transition-colors"
             >
-              <FontAwesomeIcon icon={faGithub} size="lg" />
+              <FontAwesomeIcon icon={faGithub} size="lg" color="#fff" />
             </a>
             <a
               href="https://www.linkedin.com/in/prajanya-subramanian/"
@@ -60,7 +64,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-white transition-colors"
             >
-              <FontAwesomeIcon icon={faLinkedin} size="lg" />
+              <FontAwesomeIcon icon={faLinkedin} size="lg" color="#fff" />
             </a>
             <a
               href="https://x.com/aiglelevant"
@@ -68,7 +72,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-white transition-colors"
             >
-              <FontAwesomeIcon icon={faXTwitter} size="lg" />
+              <FontAwesomeIcon icon={faXTwitter} size="lg" color="#fff" />
             </a>
           </div>
         </div>
