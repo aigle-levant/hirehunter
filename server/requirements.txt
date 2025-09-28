@@ -6,3 +6,12 @@ langchain
 requests
 langchain-core
 langserve[all]
+langchain-xai
+supabase
+python-dotenv
+python-multipart
+tiktoken
+asyncpg
+python-docx
+pdfplumber
+rich
