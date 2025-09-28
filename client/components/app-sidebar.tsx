@@ -13,6 +13,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { ThemeSwitcher } from "./theme-switcher";
 import { type AppSidebarProps } from "@/types/dashboard.types";
 
 export function AppSidebar({ user, ...props }: AppSidebarProps) {
@@ -75,6 +76,7 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
         <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
+        <ThemeSwitcher />
         <NavUser user={data.user} />
       </SidebarFooter>
       <SidebarRail />

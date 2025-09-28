@@ -2,12 +2,7 @@ pydantic
 fastapi
 uvicorn
 pandas
-nltk
+langchain
 requests
-spacy
-python-dotenv
-transformers
-sentence-transformers
-pdfplumber
-python-multipart
-torch
+langchain-core
+langserve[all]

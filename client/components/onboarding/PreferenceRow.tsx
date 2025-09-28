@@ -18,7 +18,7 @@ export default function PreferenceRow({
     <div className="flex flex-col sm:flex-row gap-2 items-center">
       <select
         {...control.register(`preferences.${index}.candidateLevel`)}
-        className="border p-2 rounded-lg dark:bg-gray-700 dark:text-white flex-1"
+        className="border p-2 rounded-lg dark:bg-white bg-gray-900 text-white dark:text-black flex-1"
       >
         <option value="">Candidate Level</option>
         <option value="Fresher">Fresher</option>
@@ -28,7 +28,7 @@ export default function PreferenceRow({
 
       <select
         {...control.register(`preferences.${index}.department`)}
-        className="border p-2 rounded-lg dark:bg-gray-700 dark:text-white flex-1"
+        className="border p-2 rounded-lg dark:bg-white bg-gray-900 text-white dark:text-black flex-1"
       >
         <option value="">Department</option>
         <option value="Engineering">Engineering</option>
@@ -40,7 +40,7 @@ export default function PreferenceRow({
 
       <select
         {...control.register(`preferences.${index}.priority`)}
-        className="border p-2 rounded-lg dark:bg-gray-700 dark:text-white flex-1"
+        className="border p-2 rounded-lg dark:bg-white bg-gray-900 text-white dark:text-black flex-1"
       >
         <option value="">Priority</option>
         <option value="Urgent">Urgent</option>
